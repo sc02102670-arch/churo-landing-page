@@ -1,27 +1,14 @@
-import type { SourceMapInput } from '@jridgewell/trace-mapping';
+// 추로LAB 프로젝트에 필요한 진짜 타입 정의입니다.
+export interface ProgramItem {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  tags?: string[];
+}
 
-export type {
-  SourceMapSegment,
-  DecodedSourceMap,
-  EncodedSourceMap,
-} from '@jridgewell/trace-mapping';
-
-export type { SourceMapInput };
-
-export type LoaderContext = {
-  readonly importer: string;
-  readonly depth: number;
-  source: string;
-  content: string | null | undefined;
-  ignore: boolean | undefined;
-};
-
-export type SourceMapLoader = (
-  file: string,
-  ctx: LoaderContext,
-) => SourceMapInput | null | undefined | void;
-
-export type Options = {
-  excludeContent?: boolean;
-  decodedMappings?: boolean;
-};
+export interface ReferenceItem {
+  id: string;
+  name: string;
+  logo?: string;
+}
