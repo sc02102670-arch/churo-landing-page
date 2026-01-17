@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>추로LAB | 사람과 함께, 길을 잇는 교육 파트너</title>
+    <title>추로LAB | 교육 파트너</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -17,58 +17,11 @@
     </script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
-      body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
-      .reveal-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.8s; }
-      .reveal-on-scroll.active { opacity: 1; transform: translateY(0); }
+      body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; }
     </style>
   </head>
   <body>
     <div id="root"></div>
-
-    <script type="module">
-      import React, { useState, useEffect } from 'https://esm.sh/react@18.2.0';
-      import ReactDOM from 'https://esm.sh/react-dom@18.2.0/client';
-
-      // 1. 간단한 Header 컴포넌트
-      const Header = () => (
-        <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-4 py-4">
-          <div className="max-w-7xl mx-auto flex justify-between items-center">
-            <h1 className="text-3xl font-black tracking-tighter">추로LAB</h1>
-            <nav className="hidden md:flex space-x-8 font-bold">
-              <a href="#about" className="hover:text-brand-green">ABOUT</a>
-              <a href="#program" className="hover:text-brand-green">PROGRAM</a>
-            </nav>
-            <button className="bg-black text-white px-4 py-2 font-bold hover:bg-brand-green">CONTACT</button>
-          </div>
-        </header>
-      );
-
-      // 2. 메인 App 컴포넌트
-      const App = () => {
-        useEffect(() => {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-          });
-          document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
-        }, []);
-
-        return React.createElement('div', { className: 'pt-20' },
-          React.createElement(Header),
-          React.createElement('section', { id: 'hero', className: 'py-32 px-4 text-center' },
-            React.createElement('h2', { className: 'text-6xl md:text-9xl font-black mb-8 reveal-on-scroll' }, 'PEOPLE & LEARNING'),
-            React.createElement('p', { className: 'text-xl md:text-2xl font-bold reveal-on-scroll' }, '사람과 함께, 길을 잇는 교육 파트너 추로LAB')
-          ),
-          React.createElement('section', { className: 'bg-brand-green py-24 text-center text-white border-y-4 border-black' },
-            React.createElement('h3', { className: 'text-4xl font-black' }, '홈페이지 복구 완료!'),
-            React.createElement('p', { className: 'mt-4 font-bold' }, '이제 디자인 부품들을 하나씩 연결할 준비가 되었습니다.')
-          )
-        );
-      };
-
-      const root = ReactDOM.createRoot(document.getElementById('root'));
-      root.render(React.createElement(App));
-    </script>
+    <script type="module" src="/App.tsx"></script>
   </body>
 </html>
