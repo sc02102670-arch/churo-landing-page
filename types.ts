@@ -1,14 +1,24 @@
-// 추로LAB 프로젝트에 필요한 진짜 타입 정의입니다.
 export interface ProgramItem {
   id: string;
-  title: string;
   category: string;
+  title: string;
   description: string;
-  tags?: string[];
+  image: string;
+  tags: string[];
+  details: {
+    overview: string;
+    target: string;
+    duration: string;
+    method: string;
+    reviews: Array<{ author: string; content: string }>;
+    curriculum: Array<{ step: string; title: string; content: string }>;
+    strengths: string[];
+  };
 }
 
 export interface ReferenceItem {
   id: string;
   name: string;
-  logo?: string;
+  category: string;
+  logo: string;
 }
