@@ -3,36 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>추로LAB | 사람과 함께, 길을 잇는 교육 파트너</title>
+    <title>추로LAB | 교육 파트너</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
-            colors: {
-              'brand-green': '#00FF00',
-              'raw-gray': '#F5F5F5',
-            },
-            boxShadow: {
-              'brutal': '4px 4px 0px 0px rgba(0,0,0,1)',
-            }
+            colors: { 'brand-green': '#00FF00', 'raw-gray': '#F5F5F5' },
+            boxShadow: { 'brutal': '4px 4px 0px 0px rgba(0,0,0,1)' }
           }
         }
       }
     </script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
-      body { font-family: 'Noto Sans KR', sans-serif; }
+      body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; }
       .reveal-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.8s; }
       .reveal-on-scroll.active { opacity: 1; transform: translateY(0); }
-      .custom-cursor {
-        width: 20px; height: 20px; background: black; border-radius: 50%;
-        position: fixed; pointer-events: none; z-index: 9999; mix-blend-mode: difference;
-      }
     </style>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/App.tsx"></script>
+    <script type="module" src="./App.tsx"></script>
   </body>
 </html>
