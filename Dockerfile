@@ -1,4 +1,4 @@
-# 1단계: 빌드 (디자인 부품들을 하나로 합치는 과정)
+# 1단계: 빌드
 FROM node:20-alpine AS build-stage
 WORKDIR /app
 COPY package*.json ./

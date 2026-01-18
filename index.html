@@ -1,23 +1,94 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>추로LAB | 사람과 함께, 길을 잇는 교육 파트너</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        colors: { 'brand-green': '#00FF00', 'raw-gray': '#F5F5F5' },
-                        boxShadow: { 'brutal': '4px 4px 0px 0px rgba(0,0,0,1)' }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>추로LAB | 사람과 함께, 길을 잇다</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans KR"', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-green': '#1a4d2e',
+                        'brand-light': '#e6f0ea',
+                        'raw-gray': '#f4f4f4',
+                    },
+                    boxShadow: {
+                        'brutal': '6px 6px 0px 0px #000000',
+                        'brutal-hover': '2px 2px 0px 0px #000000',
+                        'brutal-lg': '10px 10px 0px 0px #000000',
                     }
                 }
             }
-        </script>
-    </head>
-    <body>
-        <div id="root"></div>
-        <script type="module" src="/src/main.tsx"></script>
-    </body>
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fff;
+            border-left: 2px solid #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1a4d2e;
+        }
+        .custom-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #1a4d2e;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, background-color 0.3s, border-radius 0.3s;
+            mix-blend-mode: difference;
+        }
+        .custom-cursor.hovered {
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: 200%;
+            animation: marquee 30s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+</body>
 </html>
