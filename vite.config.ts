@@ -3,12 +3,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  base: './', // 빌드 시 상대 경로 사용 강제
   build: {
     outDir: 'dist',
-    rollupOptions: {
-      input: {
-        main: './index.html', // 시작점을 명시적으로 지정
-      },
-    },
-  },
+    assetsDir: 'assets',
+  }
 })
